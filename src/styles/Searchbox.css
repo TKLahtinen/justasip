@@ -1,0 +1,38 @@
+.container{
+    border: 1px solid #8D493A;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 600px;
+    background-color: #DFD3C3;
+}
+
+.topBar{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+.barObjectMiddle{
+    border-left: 1px solid #8D493A;
+    border-right: 1px solid #8D493A;
+}
+
+.barObject{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    border-bottom: 1px solid #8D493A;
+}
+
+.modeArea{
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
