@@ -26,13 +26,100 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 0px;
+    padding: 1rem;
     margin: 0px;
     border-bottom: 1px solid #8D493A;
+    flex-grow: 1;
+    transition: 0.3s;
 }
 
-.modeArea{
+.searchArea{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+    margin: 0px;
+}
+
+.searchBar{
+    width: 70%;
+    display: flex;
+    border: 1px solid #8D493A;
+    border-radius: 20px;
+
+}
+
+.searchBar input{
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+    flex-grow: 2;
+    background-color: #D0B8A8;
+    color: black;
+}
+
+.searchBar input:focus{
+    outline: none;
+}
+
+.searchBar button{
+    border: none;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-left: 1px solid #8D493A;
+    padding: 0.5rem;
+    background-color: #D0B8A8;
+    color: black;
+    font-size: 1rem;
+    cursor: pointer;
+    flex-grow: 1;
+    transition: 0.3s;
+}
+
+.searchBar button:hover{
+    background-color: #8D493A;
+    color: white;
+    transition: 0.3s;
+}
+
+.selectBar{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 1rem;
+    margin: 0px;
+}
+
+.selectObject{
     display: flex;
     justify-content: center;
-    padding: 1rem;
+    align-items: center;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border: 1px solid #8D493A;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100px;
+}
+
+.randomBar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border: 1px solid #8D493A;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #D0B8A8;
+}
+
+.randomBar:hover{
+    background-color: #8D493A;
+    color: white;
+    transition: 0.3s;
 }
