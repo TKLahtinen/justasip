@@ -1,0 +1,17 @@
+.cardBody{
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 250px;
+    background-color: #f8f9fa;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cardText{
+    padding: 0.5rem;
+    background-color: #8D493A;
+    color: white;
+}
