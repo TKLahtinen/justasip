@@ -123,3 +123,26 @@
     color: white;
     transition: 0.3s;
 }
+
+.ingredientArea{
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    margin: 0px;
+    flex-direction: column;
+}
+
+.ingredientArea select{
+    width: 400px;
+    padding: 0.5rem;
+    border: 1px solid #8D493A;
+    border-radius: 20px;
+    background-color: #D0B8A8;
+    color: black;
+    margin-bottom: 1rem;
+}
+
+.ingredientArea option{
+    background-color: #D0B8A8;
+    color: black;
+}

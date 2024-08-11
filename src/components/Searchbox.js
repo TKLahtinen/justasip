@@ -1,12 +1,42 @@
 import React from 'react'
 import '../styles/Searchbox.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
+
+const I_URL = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
+const C_URL = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list'
 
 const Searchbox = () => {
     const [mode, setMode] = useState('name')
     const [alcohol, setAlcohol] = useState(true)
     const active = '#8D493A'
     const inactive = '#D0B8A8'
+    const [ingredients, setIngredients] = useState()
+    const [ingredient, setIngredient] = useState()
+    const [categories, setCategories] = useState()
+    const [category, setCategory] = useState()
+
+
+    useEffect(() => {
+        axios.get(I_URL)
+        .then(res => {
+            let data = res.data.drinks
+            setIngredients(data)
+            setIngredient(data[0].strIngredient1)
+        })
+        .catch(err => console.log(err))
+    }, [])
+
+    useEffect(() => {
+        axios.get(C_URL)
+        .then(res => {
+            let data = res.data.drinks
+            setCategories(data)
+            setCategory(data[0].strCategory)
+        })
+        .catch(err => console.log(err))
+    }, [])
+
 
   return (
     <div className='container'>
@@ -74,10 +104,26 @@ const Searchbox = () => {
 
             </div>}
             {mode === 'ingredient' && <div className='ingredientArea'>
-                Ingredient
+                <p>Search by ingredient</p>
+                <select onChange={(e) => setIngredient(e.target.value)}>
+                    {ingredients && ingredients.map((ingredient, index) => {
+                        return <option key={index}>{ingredient.strIngredient1}</option>
+                    })}
+                </select>
+                <div className='randomBar'>
+                    Search
+                </div>
             </div>}
-            {mode === 'category' && <div className='categoryArea'>
-                Category
+            {mode === 'category' && <div className='ingredientArea'>
+                <p>Search by category</p>
+                <select onChange={(e) => setCategory(e.target.value)}>
+                    {categories && categories.map((category, index) => {
+                        return <option key={index}>{category.strCategory}</option>
+                    })}
+                </select>
+                <div className='randomBar'>
+                    Search
+                </div>
             </div>}
     </div>
   )
